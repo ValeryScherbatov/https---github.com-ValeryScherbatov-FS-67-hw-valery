@@ -25,12 +25,12 @@ function sumDigitsStr(num){
     return sum;
 }
 
-/*-- sumDigits math calcualtion (without convert to String type) --*/
+/*-- sumDigits math calculation (without converting to String type) --*/
 /* implementation logic
 1. divide number with num%10 to get the remainder first
 2. divide number with num/10 and get the integer_num without the remainder
 Math.trunc() or Math.floor() will return the intenger_num without remainder
-3. assign to the num the integer_num calculated on point 2.
+3. assign to the num the integer_num calculated in point 2.
 4. repeat summ of num%10 until the num === 0; (break point num equals to zero)
 */
 function sumDigitsNum(n){
