@@ -5,7 +5,7 @@ printSumDigits(sumDigitsNum(23456));
 print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
 
-/* Print function if returns true then lucky else unlucky */
+/* Print lucky on result true else prints unlucky */
 function print_lucky_unlucky_number(res){
     console.log(res ? 'lucky' : 'unlucky');
 }
