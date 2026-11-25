@@ -25,7 +25,7 @@ function sumDigitsStr(num){
     return sum;
 }
 
-/*-- sumDigits math calcualtion --*/
+/*-- sumDigits math calcualtion (without convert to String type) --*/
 /* implementation logic
 1. divide number with num%10 to get the remainder first
 2. divide number with num/10 and get the integer_num without the remainder
@@ -43,7 +43,7 @@ function sumDigitsNum(n){
     return sum;
 }
 
-/*-- Lucky number calcualtion:
+/*-- Lucky number calculation:
 sum of the even indexes is equal to the sum of odd indexes --*/
 function luckyNumber(num) {
     const str = String(num);
