@@ -60,14 +60,8 @@ function luckyNumber(num) {
         }
         //console.log(`even_sum = ${even_sum}`)
         //console.log(`odd_sum = ${odd_sum}`)
-    }
-        
-    if(even_sum === odd_sum){
-        return true;
-    }
-    else{
-        return false;
-    }
+    }    
+    return even_sum === odd_sum   
 }
    
 
