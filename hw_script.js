@@ -4,6 +4,7 @@ printSumDigits(sumDigitsStr(12345));            // sumDigits by String calculati
 printSumDigits(sumDigitsNum(123456));           // sumDigits by Math calculation
 print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
+console.log("luckyNumberNotString")
 print_lucky_unlucky_number(luckyNumberNotString(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumberNotString(124871)) //unlucky number
 
