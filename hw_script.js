@@ -28,8 +28,8 @@ function sumDigitsStr(num){
 /*-- sumDigits math calculation (without converting to String type) --*/
 /* implementation logic
 1. divide number with num%10 to get the remainder first
-2. divide number with num/10 and get the integer_num without the remainder
-Math.trunc() or Math.floor() will return the intenger_num without remainder
+2. divide number with num/10 and get the integer_num without the remainder  like
+12345 - [(12345)%10 = 5] = 12340/10 => 1234
 3. assign to the num the integer_num calculated in point 2.
 4. repeat summ of num%10 until the num === 0; (break point num equals to zero)
 */
@@ -38,7 +38,8 @@ function sumDigitsNum(n){
    let sum = 0;
    while (num !== 0){
     sum += num%10;              
-    num = Math.trunc(num/10);    // get the integer number without the remainder
+    num =(num-(num%10))/10;   // get the integer number without the last right number
+    console.count(num);
     }
     return sum;
 }
