@@ -1,21 +1,21 @@
 
 
-let res = sumDigitsStr(12345);
-console.log(`sumDigitsStr(12345) = ${res}`); // should print 15
+printSumDigits(sumDigitsStr(12345));
+printSumDigits(sumDigitsNum(23456));
+print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
+print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
 
-let res1 = sumDigitsNum(12345);
-console.log(`SumDigitsNum(12345) = ${res1}`);
+function print_lucky_unlucky_number(res){
+    console.log(res ? 'lucky' : 'unlucky');
+}
 
-res = luckyNumber(123871);
-console.log(res ? 'lucky' : 'unlucky');
-res = luckyNumber(124871);
-console.log(res ? 'lucky' : 'unlucky');
-
-
+function printSumDigits(result){
+    console.log(`sum of digits is: ${result}`);
+}
 
 function sumDigitsStr(num){
     const str_num = String(num);
-    let sum=0;
+    let sum = 0;
     for(let i=0; i<=str_num.length; i++){
         sum += i;
     }
@@ -25,10 +25,10 @@ function sumDigitsStr(num){
 
 function sumDigitsNum(n){
    let num = n;
-   let sum1=0;
-   while (num!==0){
-    sum1 +=num%10;
-    //console.log(num%10);       // get the remainder of num
+   let sum1 = 0;
+   while (num !== 0){
+    sum1 += num%10;              
+    //console.log(num%10);       // get the remainder of num%10
     num = Math.trunc(num/10);    // get the integer number without the reminder
     }
     return sum1;
