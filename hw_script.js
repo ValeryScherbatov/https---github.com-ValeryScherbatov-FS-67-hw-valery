@@ -1,7 +1,7 @@
 
 
-printSumDigits(sumDigitsStr(12345));
-printSumDigits(sumDigitsNum(23456));
+printSumDigits(sumDigitsStr(12345));            // sumDigits by String calculation
+printSumDigits(sumDigitsNum(123456));           // sumDigits by Math calculation
 print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
 
