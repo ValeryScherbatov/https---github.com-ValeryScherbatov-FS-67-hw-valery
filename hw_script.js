@@ -39,7 +39,7 @@ function sumDigitsNum(n){
    while (num !== 0){
     sum += num%10;              
     num =(num-(num%10))/10;   // get the integer number without the last right number
-    console.count(num);
+    // console.count(num);
     }
     return sum;
 }
