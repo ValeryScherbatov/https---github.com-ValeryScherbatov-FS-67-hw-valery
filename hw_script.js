@@ -5,7 +5,7 @@ printSumDigits(sumDigitsNum(23456));
 print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
 
-/* Print lucky on result true else prints unlucky */
+/* Print lucky on result true, else print unlucky */
 function print_lucky_unlucky_number(res){
     console.log(res ? 'lucky' : 'unlucky');
 }
@@ -15,7 +15,7 @@ function printSumDigits(result){
     console.log(`sum of digits is: ${result}`);
 }
 
-/*-- sumDigits str calcualtion convert number to string --*/
+/*-- sumDigits str calcualtion with convert number to string --*/
 function sumDigitsStr(num){
     const str_num = num.toString();
     let sum = 0;
@@ -27,23 +27,24 @@ function sumDigitsStr(num){
 
 /*-- sumDigits math calcualtion --*/
 /* implementation logic
-1. divide number with num%10 to get the reminder first
-2. divide number with num/10 and get the integer_num without the reminder
-Math.trunc() or Math.floor() will return the intenger_num without reminder
-3. repeat summ of num%10 until the num === 0; (break point num equals to zero)
+1. divide number with num%10 to get the remainder first
+2. divide number with num/10 and get the integer_num without the remainder
+Math.trunc() or Math.floor() will return the intenger_num without remainder
+3. assign to the num the integer_num calculated on point 2.
+4. repeat summ of num%10 until the num === 0; (break point num equals to zero)
 */
 function sumDigitsNum(n){
    let num = n;
    let sum = 0;
    while (num !== 0){
     sum += num%10;              
-    num = Math.trunc(num/10);    // get the integer number without the reminder
+    num = Math.trunc(num/10);    // get the integer number without the remainder
     }
     return sum;
 }
 
 /*-- Lucky number calcualtion:
-sum of the even indexes is equals to the sum of odd indexces --*/
+sum of the even indexes is equal to the sum of odd indexes --*/
 function luckyNumber(num) {
     const str = String(num);
     even_sum=0;
