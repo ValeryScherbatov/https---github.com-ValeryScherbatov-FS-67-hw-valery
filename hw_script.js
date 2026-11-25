@@ -4,6 +4,8 @@ printSumDigits(sumDigitsStr(12345));            // sumDigits by String calculati
 printSumDigits(sumDigitsNum(123456));           // sumDigits by Math calculation
 print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
 print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
+print_lucky_unlucky_number(luckyNumberNotString(123871)) //lucky number
+print_lucky_unlucky_number(luckyNumberNotString(124871)) //unlucky number
 
 /* Print lucky on result true, else print unlucky */
 function print_lucky_unlucky_number(res){
@@ -66,5 +68,22 @@ function luckyNumber(num) {
 }
    
 
-
-
+/*-- Lucky number calculation without convert to string --*/
+function luckyNumberNotString(num) {
+    let n_r=0;
+    let even_sum=0;
+    let odd_sum=0;
+    let index=0;
+    while(num !== 0 ){
+       index ++;
+       n_r=num%10;         // spliting the last 1 digit right number
+       num=(num-n_r)/10;   // the left number without the right number split
+       if(index%2 ===0){
+        even_sum+=n_r;
+       }
+       else{
+        odd_sum+=n_r;
+       }
+    }    
+    return even_sum === odd_sum   
+}
