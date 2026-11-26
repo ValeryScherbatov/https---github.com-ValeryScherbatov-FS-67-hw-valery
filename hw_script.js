@@ -1,11 +1,12 @@
 
 
-printSumDigits(sumDigitsStr(12345));            // sumDigits by String calculation
-printSumDigits(sumDigitsNum(123456));           // sumDigits by Math calculation
-print_lucky_unlucky_number(luckyNumber(123871)) //lucky number
-print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
-print_lucky_unlucky_number(luckyNumberNotString(123871)) //lucky number
-print_lucky_unlucky_number(luckyNumberNotString(124871)) //unlucky number
+//printSumDigits(sumDigitsStr(-12345));            // sumDigits by String calculation
+//printSumDigits(sumDigitsNum(-123456));           // sumDigits by Math calculation
+//print_lucky_unlucky_number(luckyNumberStr(123871)) //lucky number
+// print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
+print_lucky_unlucky_number(luckyNumberNotString(-123871)) //lucky number
+// print_lucky_unlucky_number(luckyNumberNotString(-124871)) //unlucky number
+
 
 /* Print lucky on result true, else print unlucky */
 function print_lucky_unlucky_number(res){
@@ -20,12 +21,20 @@ function printSumDigits(result){
 /*-- sumDigits str calcualtion with convert number to string and vback to Number-*/
 function sumDigitsStr(num){
     let sum = 0;
+    if(num<0)
+    {
+        console.log(`input of number is real but negative ${num} \n `)
+        num = -num
+        console.log(`Converting to positive ${num} \n`)
+    }  
     s = String(num);
     for(let i=0; i<s.length; i++){
         sum += (+s[i])      // identical as custing to Number. sum += Number(s[i])
     }
-    return sum;
-}
+    return sum;     
+ }
+    
+
 
 /*-- sumDigits math calculation (without converting to String type) --*/
 /* implementation logic
@@ -38,6 +47,11 @@ function sumDigitsStr(num){
 function sumDigitsNum(n){
    let num = n;
    let sum = 0;
+   if(num<0){
+        console.log(`input of number is real but negative ${num} \n `)
+        num = -num
+        console.log(`Converting to positive ${num} \n`)
+    }
    while (num !== 0){
     sum += num%10;              
     num =(num-(num%10))/10;   // get the integer number without the last right number
@@ -48,7 +62,13 @@ function sumDigitsNum(n){
 
 /*-- Lucky number calculation:
 sum of the even indexes is equal to the sum of odd indexes --*/
-function luckyNumber(num) {
+function luckyNumberStr(num) {
+    if(num<0)
+    {
+        console.log(`input of number is real but negative ${num} \n `)
+        num = -num
+        console.log(`Converting to positive ${num} \n`)
+    }  
     const str = String(num);
     even_sum=0;
     odd_sum=0;
@@ -75,7 +95,7 @@ function luckyNumberNotString(num) {
     let odd_sum=0;
     let index=0;
     while(num !== 0 ){
-       index ++;           
+       index ++;        
        n_r=num%10;         // spliting the last 1 digit right number
        num=(num-n_r)/10;   // the left number without the right number split
        if(index%2 ===0){
