@@ -20,9 +20,9 @@ function printSumDigits(result){
 /*-- sumDigits str calcualtion with convert number to string and vback to Number-*/
 function sumDigitsStr(num){
     let sum = 0;
-    s = num.toString();
+    s = String(num);
     for(let i=0; i<s.length; i++){
-        sum += (+s[i])      // identical as sum += Number(s[i])
+        sum += (+s[i])      // identical as custing to Number. sum += Number(s[i])
     }
     return sum;
 }
