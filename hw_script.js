@@ -1,11 +1,19 @@
 
+console.log("sumDigitsStr() Negative input  -12345 ")
+printSumDigits(sumDigitsStr(-12345));            // sumDigits by String calculation
+console.log("\nsumDigitsNum() Negative input -12345 ")
+printSumDigits(sumDigitsNum(-123456));           // sumDigits by Math calculation
+console.log("\nluckyNumberStr() Negative input -123871 ")
+print_lucky_unlucky_number(luckyNumberStr(-123871)) //lucky number
+console.log("\nluckyNumberStr() Positive input +123871 ")
+print_lucky_unlucky_number(luckyNumberStr(+123871)) //lucky number
+console.log("\nluckyNumberStr() Positive input 123871 ")
+print_lucky_unlucky_number(luckyNumberStr(124871)) //unlucky number
 
-//printSumDigits(sumDigitsStr(-12345));            // sumDigits by String calculation
-//printSumDigits(sumDigitsNum(-123456));           // sumDigits by Math calculation
-//print_lucky_unlucky_number(luckyNumberStr(123871)) //lucky number
-// print_lucky_unlucky_number(luckyNumber(124871)) //unlucky number
+console.log("\nluckyNumberNotString() Negative input -123871 ")
 print_lucky_unlucky_number(luckyNumberNotString(-123871)) //lucky number
-// print_lucky_unlucky_number(luckyNumberNotString(-124871)) //unlucky number
+console.log("\nluckyNumberNotString() Positive input +123871 ")
+print_lucky_unlucky_number(luckyNumberNotString(-124871)) //unlucky number
 
 
 /* Print lucky on result true, else print unlucky */
@@ -23,9 +31,9 @@ function sumDigitsStr(num){
     let sum = 0;
     if(num<0)
     {
-        console.log(`input of number is real but negative ${num} \n `)
+        //console.log(`\ninput of number is real but negative ${num}`)
         num = -num
-        console.log(`Converting to positive ${num} \n`)
+        console.log(`Converting to positive ${num}`)
     }  
     s = String(num);
     for(let i=0; i<s.length; i++){
