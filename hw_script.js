@@ -17,12 +17,12 @@ function printSumDigits(result){
     console.log(`sum of digits is: ${result}`);
 }
 
-/*-- sumDigits str calcualtion with convert number to string --*/
+/*-- sumDigits str calcualtion with convert number to string and vback to Number-*/
 function sumDigitsStr(num){
-    const str_num = num.toString();
     let sum = 0;
-    for(let i=0; i<=str_num.length; i++){
-        sum += i;
+    s = num.toString();
+    for(let i=0; i<s.length; i++){
+        sum += (+s[i])      // identical as sum += Number(s[i])
     }
     return sum;
 }
@@ -75,7 +75,7 @@ function luckyNumberNotString(num) {
     let odd_sum=0;
     let index=0;
     while(num !== 0 ){
-       index ++;
+       index ++;           
        n_r=num%10;         // spliting the last 1 digit right number
        num=(num-n_r)/10;   // the left number without the right number split
        if(index%2 ===0){
